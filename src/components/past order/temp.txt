@@ -1,0 +1,63 @@
+import { useEffect, useState } from "react"
+import SummaryFooter from "./SummaryFooter"
+import SummaryHeader from "./SummaryHeader"
+
+function Summary({sendData}) {
+    const [showSummary,shouldShouldSummary] = useState(true)
+    // useEffect(()=>{
+    //     fetch("http://localhost:5000/")
+    // })
+    return <>{showSummary && <div className="summary-page">
+        <SummaryHeader shouldShouldSummary={shouldShouldSummary}/>
+        <section className="summary-section1">
+            hello
+            <div className="summary-address">
+                hi
+            </div>
+            <div className="summary-orders">
+                <h6>Orders</h6>
+                <table>
+                    <tbody className="table1">
+                        <tr className="list">
+                            <td>Shirt</td>
+                            <td>washing</td>
+                            <td>price</td>
+                        </tr>
+                        <tr className="list">
+                            <td>Shirt</td>
+                            <td>washing</td>
+                            <td>price</td>
+                        </tr>
+                        <tr className="list">
+                            <td>Shirt</td>
+                            <td>washing</td>
+                            <td>price</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table className="table2">
+                    <tr className="list">
+                        <td>sub total</td>
+                        <td>450</td>
+                    </tr>
+                    <tr className="list">
+                        <td>Pickup charges</td>
+                        <td>90</td>
+                    </tr>
+                </table>
+                <table className="table3">
+                    <tr >
+                        <td style={{ color: "#FFFFFF", fontSize: "18px" }}>Total price</td>
+                        <td style={{ color: "#FFFFFF", fontSize: "22px" }}><span>Rs </span>560</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <SummaryFooter sendData={sendData} shouldShouldSummary={shouldShouldSummary}/>
+        <div>
+
+        </div>
+    </div>}
+    </>
+}
+export default Summary
